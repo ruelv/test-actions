@@ -6,4 +6,5 @@ jobs:
     name: job0
     runs-on: ubuntu-latest
     steps:
-      run: cc -DX=42 -o main main.c
+    - name: step0
+      run: cc -o main main.c
