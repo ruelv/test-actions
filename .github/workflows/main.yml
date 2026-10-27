@@ -5,4 +5,5 @@ jobs:
   job0:
     name: job0
     runs-on: ubuntu-latest
-    run: cc -DX=42 -o main main.c
+    steps:
+      run: cc -DX=42 -o main main.c
