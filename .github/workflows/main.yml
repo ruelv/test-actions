@@ -2,14 +2,25 @@ on:
   push:
   workflow_dispatch:
 jobs:
-  job0:
-    name: job0
+  x86_64:
+    name: x86_64
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: step0
+    - name: build
       run: cc -o main main.c
-    - name: step1
+    - name: upload
+      uses: actions/upload-artifact@v7.0.2
+      with:
+        path: main
+  arm64:
+    name: arm64
+    runs-on: ubuntu-26.04-arm
+    steps:
+    - uses: actions/checkout@v4
+    - name: build
+      run: cc -o main main.c
+    - name: upload
       uses: actions/upload-artifact@v7.0.2
       with:
         path: main
