@@ -6,5 +6,6 @@ jobs:
     name: job0
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - name: step0
       run: cc -o main main.c
